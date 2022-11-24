@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+    background-color: rgb(240,240,245);
+  }
+  
+  h2 {
+    margin: 30px;
+  }
+  
+  $width: 350px;
+  .wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: $width;
+    height: $width;
+    overflow: hidden;
+    box-shadow: 0px 4px 25px -4px rgba(0,0,0,1);
+    //animation: ani 5s infinite ease-in-out;
+    border-radius: 5px;
+    
+    .allImages {
+      height: 100%;
+      transition: all 0.5s ease-in-out;
+      
+      .imageWrapper {
+        width: $width;
+        height: $width;
+        float: left;
+        overflow: hidden;
+    img {
+      max-height: 100%;
+        }
+      }
+    }
+  }
+  
+  @keyframes ani {
+    0% {
+      border-radius: 5%;
+    }
+     50% {
+      border-radius: 40%;
+    }
+      100% {
+      border-radius: 5%;
+    }
+  
+  }
+  
+  .buttons {
+    position: relative;
+    z-index: 10;
+    top:-200px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    button {
+      background: black;
+      color: white;
+      padding: 5px 10px;
+      border: 0;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      outline: none;
+      border: 2px solid white;
+      margin: 0px 15px;
+    }
+    button:first-child {
+        transform: translateX(-80px);
+    }
+     button:nth-child(2) {
+        transform: translateX(80px);
+    }
+  }
+  
+  .wrapper:hover button{
+    transform: translateX(0px);
+  }
